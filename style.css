@@ -1,0 +1,188 @@
+:root {
+    --primary-color: #2ecc71; 
+    --secondary-color: #3498db; 
+    --background-color: #f4f7f6; 
+    --card-background: #ffffff; 
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Tahoma', 'Vazirmatn', sans-serif; 
+    direction: rtl;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: var(--text-color);
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.add-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-form input, .add-form select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+.add-form button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-shrink: 0; 
+}
+
+.add-form button:hover {
+    background-color: #27ae60;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+}
+
+.item-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-background);
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-right: 5px solid var(--primary-color); 
+    transition: all 0.3s ease;
+}
+
+.item-name {
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.item-quantity-text {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.purchased {
+    opacity: 0.6;
+    border-right-color: var(--secondary-color); 
+}
+
+.purchased .item-name {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.2s;
+}
+
+.purchase-btn {
+    color: var(--primary-color);
+}
+
+.delete-btn {
+    color: #e74c3c; 
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .add-form {
+        flex-direction: column;
+        gap: 8px; 
+        padding: 15px;
+    }
+    
+    .add-form input, 
+    .add-form select, 
+    .add-form button {
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .add-form button {
+        padding: 15px;
+    }
+    
+    .item-list li {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 12px 15px;
+    }
+
+    .item-name {
+        width: 100%;
+        margin-bottom: 8px; 
+        font-size: 16px;
+    }
+
+    .item-info {
+        width: 100%; 
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        margin-top: 0; 
+    }
+
+    .actions {
+        display: flex;
+        gap: 5px; 
+    }
+
+    .actions button {
+        font-size: 22px;
+        padding: 5px;
+    }
+}

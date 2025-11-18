@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت خرید رستوران - Realtime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>مدیریت لیست خرید رستوران نور </h1>
+
+        <form id="addItemForm" class="add-form">
+            <input type="text" id="itemName" placeholder="نام محصول (مثلاً گوجه فرنگی)" required>
+            <input type="number" id="itemQuantity" placeholder="تعداد/مقدار" min="1" value="1" required>
+            <select id="itemUnit">
+                <option value="کیلوگرم">کیلوگرم</option>
+                <option value="عدد">عدد</option>
+                <option value="بسته">بسته</option>
+                <option value="لیتر">لیتر</option>
+            </select>
+            <button type="submit">افزودن به لیست</button>
+        </form>
+
+        <div class="list-container">
+            <h2>لیست اقلام مورد نیاز</h2>
+            <ul id="shoppingList" class="item-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAcKGm-AykfRsJY7qG3lSGuPpkd9EpAcVg",
+            authDomain: "shopping-list-e9f97.firebaseapp.com",
+            projectId: "shopping-list-e9f97",
+            storageBucket: "shopping-list-e9f97.firebasestorage.app",
+            messagingSenderId: "614422548600",
+            appId: "1:614422548600:web:03469c139bd67752535d8d",
+            databaseURL: "https://shopping-list-e9f97-default-rtdb.firebaseio.com" 
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
